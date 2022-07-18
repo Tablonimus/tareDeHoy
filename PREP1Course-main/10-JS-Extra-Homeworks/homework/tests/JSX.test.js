@@ -32,7 +32,7 @@ describe('capToFront(s)', function() {
   });
 }); 
 
-describe('asAmirror(str)', function() {
+xdescribe('asAmirror(str)', function() {
   it('should return the string recieved with all the words reversed as a mirror', function() {
     expect(asAmirror("I love you so much!")).toBe("I evol uoy os !hcum");
     expect(asAmirror("The Henry Challenge is close!")).toBe("ehT yrneH egnellahC si !esolc");

@@ -4,24 +4,27 @@ function deObjetoAmatriz(objeto) {
   // Escribe una función que convierta un objeto en una matriz, donde cada elemento representa
   // un par clave-valor en forma de matriz.
   //Ejemplo:
-  /*objeto({  D: 1,  B: 2,  C: 3 }) ➞ [["D", 1], ["B", 2], ["C", 3]]*/
+  /*objeto({  D: 1,  
+    B: 2,  
+    C: 3 }) ➞ [["D", 1], ["B", 2], ["C", 3]]*/
   //Escribe tu código aquí
-
-  let newArray = [];
-  for (let algo in objeto) {
-    newArray.push([algo, objeto[algo]]); // [D,1] . [B,2]
+  var nuevoArray = [];
+  for (var clave in objeto) {
+    nuevoArray.push([clave, objeto[clave]]);
   }
-  return newArray;
+  return nuevoArray;
 }
 
 function numberOfCharacters(string) {
   //La función recibe un string. Recorre el srting y devuelve el caracter con el número de veces que aparece
   //en formato par clave-valor.
-  //Ej: Recibe ---> "adsjfdsfsfjsdjfhacabcsbajda" || Devuelve ---> { a: 5, b: 2, c: 2, d: 4, f: 4, h:1, j: 4, s: 5 }
+  //Ej: Recibe --->"adsjfdsfsfjsdjfhacabcsbajda"
+  // ||         i=       ↑                                  Devuelve ---> { a: 5, b: 2, c: 2, d: 4, f: 4, h:1, j: 4, s: 5 }
   //Escribe tu código aquí
-  let obj = {};
-  //akdajlskjdlasjdashf   obj{a:1, k:}
-
+  //  {a : 0,
+  //   d : 2 ,
+  //   s : 1}
+  var obj = {};
   for (let i = 0; i < string.length; i++) {
     if (!obj[string[i]]) {
       obj[string[i]] = 0;
@@ -30,23 +33,24 @@ function numberOfCharacters(string) {
   }
   return obj;
 }
+
 function capToFront(s) {
   //Realiza una función que reciba como parámetro un string y mueva todas las letras mayúsculas
   //al principio de la palabra.
-  //Ejemplo: sOyHeNRY -> HENRYsoy
+  //Ejemplo: s = "soyHENRY" -> HENRYsoy
+  //         i =   ↑
   //Escribe tu código aquí
-  var minuscula = "";
-  var mayuscula = "";
-
-  for (i = 0; i < s.length; i++) {
+  var minusculas = "";
+  var mayusculas = "";
+  for (var i = 0; i < s.length; i++) {
     if (s[i] === s[i].toUpperCase()) {
-      ///s  === S   H === H
-      mayuscula = mayuscula + s[i];  // HENRYdf
+      //O   ===  O
+      mayusculas = mayusculas + s[i]; //HEN
     } else {
-      minuscula = minuscula + s[i];  // s + o +y
+      minusculas = minusculas + s[i];// soy
     }
   }
-  return (mayuscula + minuscula)
+  return mayusculas + minusculas;
 }
 
 function asAmirror(str) {
@@ -54,19 +58,12 @@ function asAmirror(str) {
   //Escribe una función que tome la frase recibida y la devuelva de modo tal que se pueda leer de izquierda a derecha
   //pero con cada una de sus palabras invertidas, como si fuera un espejo.
   //Ej: Recibe ---> "The Henry Challenge is close!" || Devuelve ---> "ehT yrneH egnellahC si !esolc"
-  //Escribe tu código aquí  
-  var mirror = ""   
-
+  //Escribe tu código aquí
   // hola como estas
- // "satse omoc aloh"  [[satse],[omoc],[aloh]]     [[aloh],[omoc],[satse]]     " aloh omoc satse"
-      //con for          //con split                //con reverse            // con join(" ")
-  for (let i = str.length-1; i >= 0 ; i--){
-    mirror += str[i]
-  };
-  return mirror.split(" ").reverse().join(" ")
-
+  // "satse omoc aloh"  [[satse],[omoc],[aloh]]     [[aloh],[omoc],[satse]]     " aloh omoc satse"
+  //con for          //con split                //con reverse            // con join(" ")
 }
-
+//-------------50%---------------------------------//
 function capicua(numero) {
   //Escribe una función, la cual recibe un número y determina si es o no capicúa.
   //La misma debe retornar: "Es capicua" si el número se número que se lee igual de

@@ -84,10 +84,10 @@ function verificarPassword(usuario, password) {
     return true;
   } else {
     return false;
-  }
-
+  } 
   //otra forma ....return usuario.password === password;
-}
+} 
+
 
 function actualizarPassword(usuario, nuevaPassword) {
   // Reemplaza la contraseña existente en el objeto "usuario" con el valor de "nuevaPassword"
